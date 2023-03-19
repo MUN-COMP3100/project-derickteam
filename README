@@ -1,0 +1,6 @@
+Submission date: 18/03/2022
+
+i used curl to test if my server is working
+i was able to retrieve from the database but i couldnt add review
+i saw alot sources say that i should handle requests as JSON files 
+so thats why i used "body-parse" this may have been talked about in class but im not sure.
