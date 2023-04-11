@@ -49,3 +49,7 @@ we define a flexbox container that aligns all our items to the center of the pag
 we have a div called moviecontainer where we display data from our database
 
 we also have a popcorn logo stored in an img file
+
+
+due to running out of time and doing this project alone i was only able to make the search by title feature
+when searching with a title it returns every instance of the title available in the database
