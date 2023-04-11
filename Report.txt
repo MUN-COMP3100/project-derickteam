@@ -1,0 +1,51 @@
+PROJECT PART 3 REPORT TEAMDERICK
+
+member: derick daftari 
+student number 201657707
+
+In this part i tried implementing the webpage that will allow our user to:
+
+- login or signup with a unique username and password 
+- look up movies from our database by their titles
+- see reviews added to the movie and add their own
+
+for that we needed to implement an index.html a client.html and make adjustments to our server code.
+
+since i didnt make a previous report(didnt know it was necessary) it worthmentioning that:
+
+The database is derived from the IMDB dataset  title.basics.tsv.gz
+Using mongoimport i was able to upload the dataset to my local server
+I created a database called IMDB with a collection called Movies 
+our local server is  'mongodb://localhost:27017'
+and our local host is 'http://localhost:3000'
+
+in the server.mjs we do the following:
+
+we import cors middleware so as to allow our client to access the data from our server
+by default web browsers restrict requests between domains 
+
+we run npm install cors to add the package in vscode
+
+I redefined GET and POST endpoints to allow us to fetch and add infomation from the database
+
+to test if GET and POST works i used curl commands in terminal 
+for POST i use:
+$ curl -X POST -H "Content-Type: application/json" -d '{"rating": 4, "comment": "This movie was great"}' http://localhost:3000/api/movies/Blacksmith%20Scene/reviews
+This command adds rating and comment to a movie called Blacksmith Scene 
+
+for GET i use:
+curl http://localhost:3000/api/movies/Blacksmith%20Scene 
+This command will return Blacksmith Scene from our database and all other details attached to the title
+
+in the client.mjs
+
+we define event listeners for our elements in index.html
+the event will fetch the required data from the database
+and once the data is found we create html object that will be displayed in index.html
+
+in the index.html
+
+we define a flexbox container that aligns all our items to the center of the page 
+we have a div called moviecontainer where we display data from our database
+
+we also have a popcorn logo stored in an img file
